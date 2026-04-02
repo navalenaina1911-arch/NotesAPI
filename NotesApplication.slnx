@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/NotesApp/">
+    <File Path=".env" />
+    <File Path="docker-compose.yml" />
+    <File Path="Dockerfile" />
+    <Project Path="Notes/Notes.csproj" />
+    <Project Path="NotesDataAccess/NotesDataAccess.csproj" />
+  </Folder>
+</Solution>
