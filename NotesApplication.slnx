@@ -1,4 +1,5 @@
 <Solution>
+  <Folder Name="/cdk/" />
   <Folder Name="/NotesApp/">
     <File Path=".env" />
     <File Path="docker-compose.yml" />
