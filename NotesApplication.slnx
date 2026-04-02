@@ -6,4 +6,15 @@
     <Project Path="Notes/Notes.csproj" />
     <Project Path="NotesDataAccess/NotesDataAccess.csproj" />
   </Folder>
+  <Folder Name="/NotesApp/cdk/">
+    <File Path="cdk/.gitignore" />
+    <File Path="cdk/.npmignore" />
+    <File Path="cdk/cdk.context.json" />
+    <File Path="cdk/cdk.json" />
+    <File Path="cdk/jest.config.js" />
+    <File Path="cdk/package-lock.json" />
+    <File Path="cdk/package.json" />
+    <File Path="cdk/README.md" />
+    <File Path="cdk/tsconfig.json" />
+  </Folder>
 </Solution>
