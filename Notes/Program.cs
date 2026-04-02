@@ -38,7 +38,7 @@ app.MapScalarApiReference(option =>
     option.Title = "Notes Management API";
     option.AddDocument("v1", "API Version 1.0", "/openapi/v1.json", isDefault: true);
 });
-
+app.UseHsts();
 app.UseExceptionHandler();
 app.UseStructuredTelemetry();
 app.UseAuthorization();
