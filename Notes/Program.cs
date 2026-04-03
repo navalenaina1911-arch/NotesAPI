@@ -27,8 +27,22 @@ builder.Services.AddScoped<IWriteRepository<Note>, NotesWriteRepository>();
 builder.Services.AddSingleton<NotesMapper>();
 builder.Services.AddExceptionHandler<ExceptionHandler>();
 builder.Services.AddOpenApi("v1");
-var app = builder.Build();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", policy =>
+    {
+        policy
+            .WithOrigins(
+                "https://d1q6rp644iikc2.cloudfront.net",
+                "http://localhost:4200"
+            )
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
+    });
+});
+var app = builder.Build();
 app.MapOpenApi();
 app.MapScalarApiReference(option =>
 {
@@ -39,11 +53,13 @@ app.MapScalarApiReference(option =>
 app.UseExceptionHandler();
 app.UseStructuredTelemetry();
 app.UseAuthorization();
+app.UseCors();
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<NoteAppDbContext>();
     db.Database.Migrate();
+    Console.WriteLine("DB Created Migration Successfully");
 }
 app.Run();

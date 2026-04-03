@@ -22,6 +22,7 @@ namespace NotesDataAccess.Context
                  .HasMaxLength(50)
                  .IsRequired();
 
+
                 entity.Property(n => n.Content)
                  .HasMaxLength(500);
 

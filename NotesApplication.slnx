@@ -17,4 +17,5 @@
     <File Path="cdk/README.md" />
     <File Path="cdk/tsconfig.json" />
   </Folder>
+  <Folder Name="/NotesApp/cdk/NewFolder1/" />
 </Solution>
