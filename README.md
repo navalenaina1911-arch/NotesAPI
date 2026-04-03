@@ -96,7 +96,7 @@ dotnet ef database update
 dotnet run --project Notes
 ```
 
-The API will be available at `https://localhost:5001` with Swagger UI at `/swagger`.
+The API will be available at `https://localhost:5227` with Swagger UI at `/scalar`.
 
 ### Docker (PostgreSQL only)
 
