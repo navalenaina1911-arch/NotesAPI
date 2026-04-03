@@ -29,9 +29,7 @@ builder.Services.AddExceptionHandler<ExceptionHandler>();
 builder.Services.AddOpenApi("v1");
 var app = builder.Build();
 
-
 app.MapOpenApi();
-
 app.MapScalarApiReference(option =>
 {
     option.Title = "Notes Management API";
@@ -42,4 +40,10 @@ app.UseExceptionHandler();
 app.UseStructuredTelemetry();
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<NoteAppDbContext>();
+    db.Database.Migrate();
+}
 app.Run();
