@@ -148,11 +148,6 @@ using (var scope = app.Services.CreateScope())
 }
 
 **Option B — Create  migration service and run it when required
----
-
-
-
-<img width="1231" height="623" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/6cf9c287-062d-4c33-9c61-0b3cf340d2fb" />
 
 
 *Built with ❤️ for Traton Financial Services.*
