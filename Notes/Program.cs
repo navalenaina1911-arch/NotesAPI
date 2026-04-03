@@ -35,8 +35,7 @@ builder.Services.AddCors(options =>
     {
         policy
             .WithOrigins(
-                "https://d1q6rp644iikc2.cloudfront.net",
-                "http://localhost:4200"
+                "https://d1q6rp644iikc2.cloudfront.net"
             )
             .AllowAnyMethod()
             .AllowAnyHeader()
