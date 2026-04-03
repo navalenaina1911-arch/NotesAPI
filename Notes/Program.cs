@@ -62,6 +62,6 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<NoteAppDbContext>();
     db.Database.Migrate();
-    Console.WriteLine("DB Created Migration Successfully");
+    Console.WriteLine("DB Created was Migration Successfully");
 }
 app.Run();
