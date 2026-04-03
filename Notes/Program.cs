@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Notes.Extensions;
 using Notes.Handler;
@@ -52,8 +53,9 @@ app.MapScalarApiReference(option =>
 
 app.UseExceptionHandler();
 app.UseStructuredTelemetry();
+app.UseCors("CorsPolicy");
 app.UseAuthorization();
-app.UseCors();
+
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
