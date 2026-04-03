@@ -4,12 +4,6 @@
 
 ---
 
-## ⚠️ Deployment Note
-
-The API runs fully and correctly **locally**. In the deployed environment, PostgreSQL migrations had not been executed, meaning the database schema was never created. This is a **deployment configuration issue** — not an application bug — and is straightforward to resolve by running migrations as part of the CI/CD pipeline or startup process.
-
----
-
 ## 🏗️ Architecture Overview
 
 The project follows a clean, layered architecture designed for maintainability and testability:
