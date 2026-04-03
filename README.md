@@ -135,19 +135,8 @@ docker run --name notes-postgres \
 
 ---
 
-## 🩺 Fixing the Deployment Issue
-
-The production error (`relation "Notes" does not exist`) occurs because migrations were not run against the production database. To resolve:
-
-**Option A — Apply migrations on startup** (add to `Program.cs`):
-```csharp
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<NotesDbContext>();
-    await db.Database.MigrateAsync();
-}
-
-**Option B — Create  migration service and run it when required
-
+##  ToDo
+ Add Caching Layer 
+ Add Lambda Authoriser for Authentication and Authorisation.
 
 *Built with ❤️ for Traton Financial Services.*
